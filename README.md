@@ -8,5 +8,5 @@ How to run it?
   - creating a new game
   - listing all games  
   - updating game (scoring a goal)
-  - game details
+  - game details - returns human-readable scoreboard
   

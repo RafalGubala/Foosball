@@ -5,6 +5,6 @@ namespace Foosball.Microservice.Infrastructure.Commands.Abstraction
 {
     public interface ICreateGameCommand
     {
-        Task ExecuteAsync(EntityId id, string teamAName, string teamBName);
+        Task ExecuteAsync(EntityId id, TeamName teamAName, TeamName teamBName);
     }
 }

@@ -33,7 +33,9 @@ namespace Foosball.Microservice.Api.Controllers
         public async Task<IActionResult> CreateAsync(CreateGamePostModel model)
         {
             var newGameId = EntityId.New();
-            await _createGameCommand.ExecuteAsync(newGameId, model.TeamA, model.TeamB);
+            var teamAName = TeamName.Create(model.TeamA);
+            var teamBName = TeamName.Create(model.TeamB);
+            await _createGameCommand.ExecuteAsync(newGameId, teamAName, teamBName);
             return Ok(new { id = newGameId.Id });
         }
 

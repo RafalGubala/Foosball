@@ -15,12 +15,9 @@ namespace Foosball.Microservice.Infrastructure.Commands.Implementation
             _gameRepository = gameRepository;
         }
 
-        public async Task ExecuteAsync(EntityId id, string teamAName, string teamBName)
+        public async Task ExecuteAsync(EntityId id, TeamName teamAName, TeamName teamBName)
         {
-            var game = Game.Create(
-                id,
-                TeamName.Create(teamAName),
-                TeamName.Create(teamBName));
+            var game = Game.Create(id, teamAName, teamBName);
             await _gameRepository.CreateAsync(game);
         }
     }
